@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operação Direita Brasil — Plataforma de Fundamentos, Ideias e Futuro</title>
+  <meta name="description" content="Plataforma estratégica e centro de estudos sobre os fundamentos intelectuais, propostas econômicas, históricas e institucionais da direita democrática brasileira.">
+  <meta name="keywords" content="direita brasileira, liberalismo, conservadorismo, responsabilidade fiscal, livre mercado, história política brasil, marco do saneamento, liberdade econômica">
+  <meta name="author" content="Conselho Editorial de Políticas Públicas e Estudos Estratégicos">
+
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Operação Direita Brasil — Centro de Estudos & Plataforma Cívica">
+  <meta property="og:description" content="Fundamentos filosóficos, dados econômicos, debates analíticos e a agenda de futuro da direita democrática no Brasil.">
+  <meta property="og:url" content="http://localhost/operacao-direita-brasil/">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#070D19',
+              900: '#0B132B',
+              850: '#101B38',
+              800: '#131E3A',
+              700: '#1E2D54',
+              600: '#2A3B66'
+            },
+            gold: {
+              300: '#F6D365',
+              400: '#F59E0B',
+              500: '#D4AF37',
+              600: '#AA820A'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Chart.js para Visualização de Dados -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+  <!-- Folha de Estilos Customizada -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Schema.org Dados Estruturados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Operação Direita Brasil",
+    "url": "http://localhost/operacao-direita-brasil/",
+    "description": "Plataforma de referência sobre o pensamento político, economia de mercado e propostas institucionais da direita democrática brasileira.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Conselho Editorial de Políticas Públicas",
+      "foundingDate": "2026"
+    }
+  }
+  </script>
+</head>
+<body class="bg-navy-950 text-slate-100 font-sans antialiased selection:bg-gold-500/30 selection:text-gold-300">
+
+  <!-- BARRA DE ACESSIBILIDADE E UTILITÁRIOS -->
+  <aside class="bg-navy-950 border-b border-navy-700/60 py-1.5 px-4 text-xs text-slate-400 no-print" aria-label="Barra de Acessibilidade">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-medium text-slate-300">Plataforma Cívica & Centro de Estudos Estratégicos</span>
+        <span class="text-slate-600 hidden sm:inline">|</span>
+        <span class="hidden sm:inline text-slate-400">Edição 2026/2030</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center gap-1 border-r border-navy-700 pr-3">
+          <span class="sr-only">Tamanho da Fonte:</span>
+          <button id="fontDecreaseBtn" class="px-1.5 py-0.5 rounded hover:bg-navy-800 text-slate-300" title="Diminuir Fonte" aria-label="Diminuir tamanho da fonte">A-</button>
+          <button id="fontIncreaseBtn" class="px-1.5 py-0.5 rounded hover:bg-navy-800 text-slate-300 font-bold" title="Aumentar Fonte" aria-label="Aumentar tamanho da fonte">A+</button>
+        </div>
+        <button id="toggleContrastBtn" class="flex items-center gap-1.5 text-slate-300 hover:text-amber-300 transition-colors" aria-pressed="false" title="Alternar Alto Contraste">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <span>Alto Contraste</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVBAR PRINCIPAL (GLASSMORPHISM) -->
+  <header class="glass-nav sticky top-0 z-40 transition-all duration-300" role="banner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logotipo Institucional -->
+        <a href="#hero" class="flex items-center gap-3 group focus:outline-none" aria-label="Operação Direita Brasil - Início">
+          <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6 text-navy-950" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div>
+            <span class="block font-display font-extrabold text-lg tracking-wider text-white group-hover:text-amber-300 transition-colors">
+              OPERAÇÃO DIREITA BRASIL
+            </span>
+            <span class="block text-[10px] uppercase tracking-widest text-amber-400/90 font-semibold">
+              Liberdade • Responsabilidade • Futuro
+            </span>
+          </div>
+        </a>
+
+        <!-- Menu Desktop -->
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-300" aria-label="Menu Principal">
+          <a href="#o-que-e" class="nav-item hover:text-amber-400 transition-colors">Conceito & Escolas</a>
+          <a href="#pilares" class="nav-item hover:text-amber-400 transition-colors">8 Pilares</a>
+          <a href="#economia" class="nav-item hover:text-amber-400 transition-colors">Economia</a>
+          <a href="#seguranca" class="nav-item hover:text-amber-400 transition-colors">Segurança</a>
+          <a href="#historia" class="nav-item hover:text-amber-400 transition-colors">História do Brasil</a>
+          <a href="#debates" class="nav-item hover:text-amber-400 transition-colors">Debates</a>
+          <a href="#indicadores" class="nav-item hover:text-amber-400 transition-colors">Indicadores</a>
+          <a href="#propostas" class="nav-item hover:text-amber-400 transition-colors">Agenda 2026+</a>
+          <a href="#biblioteca" class="nav-item hover:text-amber-400 transition-colors">Fontes</a>
+          <a href="#equipe" class="nav-item hover:text-amber-400 transition-colors text-amber-300/90 font-semibold">Integrantes</a>
+        </nav>
+
+        <!-- CTA Header -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#propostas" class="btn-gold text-xs uppercase tracking-wider py-2.5 px-4 font-bold">
+            Conhecer Propostas
+          </a>
+        </div>
+
+        <!-- Botão Menu Mobile -->
+        <div class="flex lg:hidden">
+          <button id="mobileMenuBtn" type="button" class="p-2 rounded-md text-slate-400 hover:text-white hover:bg-navy-800 focus:outline-none" aria-controls="mobileMenu" aria-expanded="false" aria-label="Abrir Menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-navy-900 border-b border-navy-700 px-4 pt-3 pb-6 space-y-2">
+      <a href="#o-que-e" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Conceito & História</a>
+      <a href="#pilares" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">8 Pilares Fundamentais</a>
+      <a href="#economia" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Economia & Prosperidade</a>
+      <a href="#seguranca" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Segurança Pública & Justiça</a>
+      <a href="#educacao" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Educação & Oportunidades</a>
+      <a href="#valores" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Família & Liberdades</a>
+      <a href="#historia" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">História Política Brasileira</a>
+      <a href="#debates" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Biblioteca de Debates</a>
+      <a href="#indicadores" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Painel de Indicadores</a>
+      <a href="#propostas" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Propostas para o Futuro</a>
+      <a href="#faq" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Perguntas Frequentes</a>
+      <a href="#biblioteca" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-navy-800">Biblioteca de Fontes</a>
+      <a href="#equipe" class="nav-item block px-3 py-2 rounded-md text-base font-medium text-amber-300 hover:bg-navy-800 font-bold">Integrantes do Grupo</a>
+      <div class="pt-4">
+        <a href="#propostas" class="btn-gold w-full text-center py-3 text-xs uppercase tracking-wider font-bold">
+          Ver Agenda Estratégica Completa
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         SEÇÃO 01 — HERO PRINCIPAL
+         ========================================================================== -->
+    <section id="hero" class="relative hero-gradient hero-mesh pt-16 pb-24 md:pt-28 md:pb-36 border-b border-navy-800 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-4xl mx-auto">
+          
+          <!-- Badge de Categoria -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800/90 border border-amber-500/30 text-amber-300 text-xs font-semibold mb-6 shadow-inner">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            Plataforma Estratégica de Fundamentos, Políticas Públicas & Futuro
+          </div>
+
+          <!-- Título Hero Nobre e Impactante -->
+          <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-black tracking-tight text-white mb-6 leading-[1.12]">
+            Ideias que geram <br>
+            <span class="gold-gradient-text">liberdade, responsabilidade</span> <br>
+            e prosperidade no Brasil.
+          </h1>
+
+          <!-- Subtítulo Explicativo e Sólido -->
+          <p class="text-lg sm:text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed font-normal">
+            Uma abordagem profunda, factual e institucional sobre os fundamentos filosóficos, evidências econômicas e propostas concretas da direita democrática para o desenvolvimento nacional soberano.
+          </p>
+
+          <!-- Ações Principais -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <a href="#pilares" class="btn-gold w-full sm:w-auto text-sm uppercase tracking-wider">
+              <span>Explorar os 8 Pilares</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <a href="#propostas" class="btn-outline-gold w-full sm:w-auto text-sm uppercase tracking-wider">
+              <span>Conhecer Propostas 2026+</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a href="#indicadores" class="px-5 py-3 rounded text-sm font-semibold text-slate-300 hover:text-white transition-colors flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              <span>Painel de Dados Oficiais</span>
+            </a>
+          </div>
+
+          <!-- Métricas Institucionais em Grid -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-10 border-t border-navy-700/80 text-left">
+            <div class="p-4 rounded-lg bg-navy-900/60 border border-navy-700/60">
+              <span class="block text-2xl md:text-3xl font-display font-extrabold text-amber-400">8</span>
+              <span class="text-xs text-slate-400 font-medium">Pilares Estruturantes Fundamentados</span>
+            </div>
+            <div class="p-4 rounded-lg bg-navy-900/60 border border-navy-700/60">
+              <span class="block text-2xl md:text-3xl font-display font-extrabold text-emerald-400">R$ 110B+</span>
+              <span class="text-xs text-slate-400 font-medium">Investimentos Privados no Marco do Saneamento</span>
+            </div>
+            <div class="p-4 rounded-lg bg-navy-900/60 border border-navy-700/60">
+              <span class="block text-2xl md:text-3xl font-display font-extrabold text-amber-400">12</span>
+              <span class="text-xs text-slate-400 font-medium">Propostas Estratégicas com Custo & KPIs</span>
+            </div>
+            <div class="p-4 rounded-lg bg-navy-900/60 border border-navy-700/60">
+              <span class="block text-2xl md:text-3xl font-display font-extrabold text-emerald-400">30+</span>
+              <span class="text-xs text-slate-400 font-medium">Fontes Oficiais (IBGE, BCB, IPEA, Fraser)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 02 — O QUE É A DIREITA? (CONCEITO & VERTENTES)
+         ========================================================================== -->
+    <section id="o-que-e" class="py-20 bg-navy-950 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="badge-gold mb-3">Definição Política & Rigor Intelectual</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            O que é a Direita Política?
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            Longe de clichês caricatos, a direita política é uma tradição rica e multifacetada de pensamento ocidental, unida pela primazia da liberdade individual, pelo ceticismo frente à tirania estatal e pela defesa prudente das instituições testadas pelo tempo.
+          </p>
+        </div>
+
+        <!-- Síntese Histórica Conceitual -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div class="think-card p-6">
+            <span class="badge-gold mb-3">Origem Histórica</span>
+            <h3 class="text-lg font-serif font-bold text-white mb-2">Assembleia Francesa de 1789</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              O termo nasceu na Assembleia Nacional Constituinte de 1789. À direita sentavam-se os moderados que defendiam a estabilidade constitucional, a ordem legal e a reforma prudente, enquanto à esquerda posicionavam-se os adeptos de rupturas revolucionárias violentas.
+            </p>
+          </div>
+          <div class="think-card p-6">
+            <span class="badge-emerald mb-3">Fundamento Central</span>
+            <h3 class="text-lg font-serif font-bold text-white mb-2">Ordem Espontânea vs. Dirigismo</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              A direita parte da premissa de que a sociedade humana é complexa demais para ser moldada por comitês burocráticos centrais. Como ensinou Hayek, o conhecimento está disperso entre milhões de indivíduos livres que tomam decisões por cooperação voluntária.
+            </p>
+          </div>
+          <div class="think-card p-6">
+            <span class="badge-gold mb-3">Compromisso Cívico</span>
+            <h3 class="text-lg font-serif font-bold text-white mb-2">A Primazia do Estado de Direito</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              A direita democrática recusa veementemente o arbítrio e o populismo. Para governar com legitimidade, o poder estatal deve estar estritamente limitado por leis prévias, com freios e contrapesos entre poderes e garantias individuais invioláveis.
+            </p>
+          </div>
+        </div>
+
+        <!-- As 4 Grandes Vertentes da Direita -->
+        <div class="mb-16">
+          <div class="flex items-center justify-between mb-8">
+            <div>
+              <span class="badge-emerald mb-1">Pluralismo Interno</span>
+              <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">
+                As Quatro Grandes Escolas de Pensamento da Direita
+              </h3>
+            </div>
+            <span class="text-xs text-slate-400 hidden sm:inline">Diferenças & Convergências</span>
+          </div>
+
+          <div id="schoolsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Renderizado dinamicamente por js/app.js -->
+          </div>
+        </div>
+
+        <!-- Linha do Tempo Histórica Interativa -->
+        <div>
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="badge-gold mb-2">História Política Brasileira & Global</span>
+            <h3 class="text-2xl md:text-3xl font-serif font-bold text-white mb-2">
+              A Evolução Histórica das Ideias de Direita
+            </h3>
+            <p class="text-xs md:text-sm text-slate-400">
+              Da Assembleia Constituinte Francesa aos grandes marcos institucionais e regulatórios do Brasil contemporâneo.
+            </p>
+          </div>
+
+          <div id="timelineContainer" class="timeline-stem relative max-w-4xl mx-auto">
+            <!-- Renderizado dinamicamente por js/app.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 03 — OS PILARES FUNDAMENTAIS DA DIREITA
+         ========================================================================== -->
+    <section id="pilares" class="py-20 bg-navy-900 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="badge-gold mb-3">Matriz Doutrinária</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Os 8 Pilares Estruturantes
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            Cada pilar sustenta o edifício da liberdade e da prosperidade. Clique em qualquer cartão para explorar sua fundamentação filosófica, aplicação prática no Brasil, respostas a críticas comuns e bibliografia primária.
+          </p>
+        </div>
+
+        <div id="pillarsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Renderizado dinamicamente por js/app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 04 — ECONOMIA E PROSPERIDADE
+         ========================================================================== -->
+    <section id="economia" class="py-20 bg-navy-950 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="badge-emerald mb-3">Economia de Mercado & Crescimento Sustentável</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            A Riqueza das Nações: Por Que o Mercado Funciona?
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            A riqueza não é um jogo de soma zero nem uma dádiva estatal: ela é criada pelo trabalho, investimento, inovação e concorrência livre. Onde há segurança jurídica e moeda estável, a produtividade cresce e a pobreza recua.
+          </p>
+        </div>
+
+        <!-- 3 Eixos Econômicos da Direita -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div class="think-card p-6">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-white mb-2">Desregulamentação & Livre Iniciativa</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              A <strong>Lei de Liberdade Econômica (Lei 13.874/19)</strong> estabeleceu a presunção de boa-fé do cidadão, dispensou alvarás prévios para centenas de atividades de baixo risco e proibiu a criação de reservas de mercado artificiais por reguladores.
+            </p>
+            <span class="text-xs text-amber-300 font-mono">Fonte: Ministério da Fazenda & DREI</span>
+          </div>
+
+          <div class="think-card p-6">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-white mb-2">Responsabilidade Fiscal & Moeda Sadia</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              A inflação é o imposto mais cruel e regressivo de todos. A independência institucional do <strong>Banco Central (LC 179/21)</strong> e o controle dos déficits públicos garantem que o suor do trabalhador não seja confiscado pela corrosão monetária.
+            </p>
+            <span class="text-xs text-emerald-400 font-mono">Fonte: Banco Central do Brasil</span>
+          </div>
+
+          <div class="think-card p-6">
+            <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="text-xl font-serif font-bold text-white mb-2">Privatizações & Concessões</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              O <strong>Novo Marco Legal do Saneamento (Lei 14.026/20)</strong> provou que a concorrência aberta atrai centenas de bilhões de reais em saneamento, ferrovias, portos e energia, sem drenar o orçamento da saúde e da educação.
+            </p>
+            <span class="text-xs text-blue-300 font-mono">Fonte: Instituto Trata Brasil / BNDES</span>
+          </div>
+        </div>
+
+        <!-- SIMULADOR INTERATIVO DE LIBERDADE ECONÔMICA -->
+        <div class="think-card p-6 md:p-10 border-amber-500/40 bg-gradient-to-br from-navy-900 to-navy-850">
+          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 mb-8 border-b border-navy-700/80 pb-6">
+            <div>
+              <span class="badge-gold mb-2">Simulador Econométrico Interativo</span>
+              <h3 class="text-2xl md:text-3xl font-serif font-bold text-white">
+                O Impacto das Reformas Liberais no PIB & Emprego
+              </h3>
+              <p class="text-sm text-slate-300 mt-1 max-w-2xl">
+                Ajuste os parâmetros abaixo para simular o efeito composto no crescimento econômico de 10 anos, baseado nas elasticidades empíricas do Banco Mundial e Fraser Institute.
+              </p>
+            </div>
+            <div class="text-xs text-slate-400 font-mono bg-navy-950 p-3 rounded border border-navy-700">
+              Modelo: Elasticidade Risco-País & Fraser Institute (2024)
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <!-- Controle 1: Desoneração Tributária -->
+            <div class="bg-navy-950/70 p-5 rounded-lg border border-navy-700">
+              <div class="flex justify-between items-center mb-2">
+                <label for="simTaxReduction" class="text-sm font-semibold text-slate-200">Redução de Carga / IRPJ:</label>
+                <span id="valTax" class="text-amber-400 font-mono font-bold text-sm">-15%</span>
+              </div>
+              <input id="simTaxReduction" type="range" min="0" max="30" value="15" step="1" class="w-full accent-amber-400 cursor-pointer">
+              <span class="text-[11px] text-slate-400 block mt-2">Redução de alíquotas sobre reinvestimento produtivo.</span>
+            </div>
+
+            <!-- Controle 2: Redução da Burocracia -->
+            <div class="bg-navy-950/70 p-5 rounded-lg border border-navy-700">
+              <div class="flex justify-between items-center mb-2">
+                <label for="simBurocracyReduction" class="text-sm font-semibold text-slate-200">Desregulamentação de Licenças:</label>
+                <span id="valBurocracy" class="text-amber-400 font-mono font-bold text-sm">-25%</span>
+              </div>
+              <input id="simBurocracyReduction" type="range" min="0" max="50" value="25" step="5" class="w-full accent-amber-400 cursor-pointer">
+              <span class="text-[11px] text-slate-400 block mt-2">Eliminação de prazos e cartórios para novos negócios.</span>
+            </div>
+
+            <!-- Controle 3: Abertura Comercial -->
+            <div class="bg-navy-950/70 p-5 rounded-lg border border-navy-700">
+              <div class="flex justify-between items-center mb-2">
+                <label for="simMarketOpenness" class="text-sm font-semibold text-slate-200">Abertura de Comércio Exterior:</label>
+                <span id="valOpenness" class="text-amber-400 font-mono font-bold text-sm">+20%</span>
+              </div>
+              <input id="simMarketOpenness" type="range" min="0" max="50" value="20" step="5" class="w-full accent-amber-400 cursor-pointer">
+              <span class="text-[11px] text-slate-400 block mt-2">Redução de tarifas de importação de máquinas e insumos.</span>
+            </div>
+          </div>
+
+          <!-- Resultados Projetados da Simulação -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-navy-700/80 text-center">
+            <div class="p-4 rounded-lg bg-navy-950 border border-emerald-900/50">
+              <span class="text-xs text-slate-400 font-medium uppercase tracking-wider block">Expansão do PIB Potencial (10 anos):</span>
+              <span id="simResultGdp" class="text-3xl font-display font-black text-emerald-400 block mt-1">+9.3%</span>
+              <span class="text-[11px] text-slate-500">Ganhos de produtividade total dos fatores</span>
+            </div>
+            <div class="p-4 rounded-lg bg-navy-950 border border-amber-900/50">
+              <span class="text-xs text-slate-400 font-medium uppercase tracking-wider block">Novos Empregos Formais Estimados:</span>
+              <span id="simResultJobs" class="text-3xl font-display font-black text-amber-400 block mt-1">+4.8M</span>
+              <span class="text-[11px] text-slate-500">Inserção no mercado com carteira assinada</span>
+            </div>
+            <div class="p-4 rounded-lg bg-navy-950 border border-blue-900/50">
+              <span class="text-xs text-slate-400 font-medium uppercase tracking-wider block">Aumento Real do Poder de Compra:</span>
+              <span id="simResultIncome" class="text-3xl font-display font-black text-blue-400 block mt-1">+11.4%</span>
+              <span class="text-[11px] text-slate-500">Deflacionado pelo recuo de custos logísticos</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 05 — SEGURANÇA PÚBLICA E JUSTIÇA
+         ========================================================================== -->
+    <section id="seguranca" class="py-20 bg-navy-900 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="badge-gold mb-3">Ordem, Justiça & Proteção ao Cidadão</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Segurança Pública: O Primeiro Dever do Estado
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            Sem segurança não há liberdade. O cidadão de bem não pode viver refém do narcotráfico e de facções violentas. A abordagem da direita democrática combina inteligência policial, firmeza penal e garantias à vítima.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="think-card p-6">
+            <span class="text-xs font-mono text-amber-400 block mb-1">Eixo 01</span>
+            <h3 class="text-lg font-serif font-bold text-white mb-2">Asfixia Financeira às Facções</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              O crime organizado opera como multinacional do ilícito. A prioridade é o confisco patrimonial célere, o rastreamento de lavagem de capitais via COAF e Polícia Federal e o isolamento biométrico total de chefes nos presídios federais.
+            </p>
+          </div>
+          <div class="think-card p-6">
+            <span class="text-xs font-mono text-emerald-400 block mb-1">Eixo 02</span>
+            <h3 class="text-lg font-serif font-bold text-white mb-2">Valorização & Ciclo Completo</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Apoio jurídico e treinamento contínuo para as forças de segurança que arriscam a vida nas ruas. Implementação gradual do ciclo completo de polícia para acabar com a divisão burocrática ineficiente entre patrulha e investigação.
+            </p>
+          </div>
+          <div class="think-card p-6">
+            <span class="text-xs font-mono text-amber-400 block mb-1">Eixo 03</span>
+            <h3 class="text-lg font-serif font-bold text-white mb-2">Foco Integral na Vítima</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Ruptura com o garantismo hiperbólico que trata o agressor como vítima social e desampara a família enlutada. Criação de fundos de indenização civil pagos com os bens expropriados dos próprios criminosos.
+            </p>
+          </div>
+          <div class="think-card p-6">
+            <span class="text-xs font-mono text-emerald-400 block mb-1">Eixo 04</span>
+            <h3 class="text-lg font-serif font-bold text-white mb-2">Trabalho & Disciplina Prisional</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Obrigação do trabalho prisional produtivo para custeio da própria subsistência no cárcere, ressarcimento da vítima e aquisição de ofício técnico para que o egresso não retorne à criminalidade.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 06 — EDUCAÇÃO E OPORTUNIDADES
+         ========================================================================== -->
+    <section id="educacao" class="py-20 bg-navy-950 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="badge-emerald mb-3">Capital Humano & Meritocracia</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Educação Baseada em Evidências e Liberdade de Escolha
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            O Brasil não sofre de falta de verbas educacionais, mas de métodos pedagógicos ideológicos fracassados. A direita defende a ciência cognitiva na alfabetização, o ensino técnico profissionalizante e o protagonismo da família.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="think-card p-6">
+            <h3 class="text-xl font-serif font-bold text-white mb-3">Alfabetização Fônica na Idade Certa</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              Evidências globais da neurociência (EUA, Reino Unido, França) provam que o método fônico explícito alfabetiza com muito mais velocidade e equidade do que o construtivismo abstrato, erradicando o analfabetismo funcional nas primeiras séries.
+            </p>
+            <div class="p-3 bg-navy-900 rounded border border-navy-700 text-xs text-amber-300">
+              Caso de Sucesso: Município de Sobral (CE) e reformas em Minas Gerais e Paraná com foco em métricas.
+            </div>
+          </div>
+
+          <div class="think-card p-6">
+            <h3 class="text-xl font-serif font-bold text-white mb-3">Expansão Massiva do Ensino Técnico</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              Na Alemanha e na Coreia do Sul, mais de 50% dos jovens cursam ensino médio técnico integrado. No Brasil, eram menos de 12%. O modelo da direita aproxima a escola do setor produtivo, preparando o jovem imediatamente para empregos de alta remuneração.
+            </p>
+            <div class="p-3 bg-navy-900 rounded border border-navy-700 text-xs text-emerald-300">
+              Referência: Modelos do Sistema S (Senai/Senac) e expansão da educação dual público-privada.
+            </div>
+          </div>
+
+          <div class="think-card p-6">
+            <h3 class="text-xl font-serif font-bold text-white mb-3">Liberdade Pedagógica & Vouchers</h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-4">
+              Financiamento focado no aluno, e não nas burocracias escolares. Pais devem ter o direito de escolher onde seus filhos estudam por meio de vouchers em creches e ensino técnico, além da regulamentação legal e digna do ensino domiciliar (homeschooling).
+            </p>
+            <div class="p-3 bg-navy-900 rounded border border-navy-700 text-xs text-blue-300">
+              Fundamento: Milton Friedman (The Role of Government in Education) e jurisprudência internacional.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 07 — FAMÍLIA, LIBERDADES E VALORES
+         ========================================================================== -->
+    <section id="valores" class="py-20 bg-navy-900 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="badge-gold mb-3">Sociedade Civil & Princípio da Subsidiariedade</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Família, Liberdade de Consciência e Pluralismo
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            Antes do Estado existe o indivíduo, a família, as igrejas e as associações livres de vizinhança. O gigantismo governamental não pode usurpar as funções morais e educativas dos corpos intermediários da sociedade civil.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="think-card p-8">
+            <span class="badge-gold mb-3">Garantia Constitucional</span>
+            <h3 class="text-2xl font-serif font-bold text-white mb-3">Liberdade de Expressão Irrestrita</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              A democracia depende da livre circulação de ideias, sem tribunais de exceção ou censura prévia arbitrária sob pretexto de combate a opiniões dissonantes. Como ensinou John Stuart Mill, suprimir uma opinião é roubar a humanidade da oportunidade de descobrir a verdade ou de testá-la contra o erro.
+            </p>
+            <div class="text-xs text-slate-400 border-t border-navy-700 pt-3">
+              Artigo 5º, incisos IV e IX da Constituição Federal de 1988: "é livre a manifestação do pensamento, sendo vedado o anonimato" e "livre a expressão da atividade intelectual, artística, científica e de comunicação, independentemente de censura ou licença".
+            </div>
+          </div>
+
+          <div class="think-card p-8">
+            <span class="badge-emerald mb-3">Pilar Comunitário</span>
+            <h3 class="text-2xl font-serif font-bold text-white mb-3">A Família como Primeira Rede de Proteção</h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-4">
+              A família é a célula fundamental onde se aprende a solidariedade, a empatia, o trabalho e a honra. Nenhuma burocracia estatal, por mais bem intencionada que seja, substitui o amor, o cuidado e o exemplo dos pais. A direita defende a proteção jurídica do núcleo familiar e a liberdade religiosa integral.
+            </p>
+            <div class="text-xs text-slate-400 border-t border-navy-700 pt-3">
+              Princípio da Subsidiariedade: O Estado só deve intervir quando as instâncias familiares e comunitárias estiverem comprovadamente incapacitadas de agir.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 08 — HISTÓRIA POLÍTICA BRASILEIRA
+         ========================================================================== -->
+    <section id="historia" class="py-20 bg-navy-950 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="badge-gold mb-3">Rigor Factual & Contexto Crítico</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            História Política Brasileira: Contribuições e Lições
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            Uma análise cronológica e desprovida de mitos sobre o papel de lideranças, correntes liberais e conservadoras na construção das instituições republicanas, da moeda estável e das reformas de mercado.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Período 1 -->
+          <div class="think-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="badge-gold">1889 - 1930</span>
+                <span class="text-xs font-mono text-slate-500">República Velha</span>
+              </div>
+              <h3 class="text-lg font-serif font-bold text-white mb-2">Constitucionalismo Liberal & Rui Barbosa</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                Inspirada no federalismo norte-americano, a Constituição de 1891 estabeleceu as bases do Estado de Direito no Brasil. Rui Barbosa consolidou a doutrina do <em>habeas corpus</em>, defendeu a imprensa livre e combateu os abusos do militarismo positivista de Floriano Peixoto.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800 text-xs text-amber-300/90 font-mono">
+              Legado: Garantias individuais civis e descentralização federativa inicial.
+            </div>
+          </div>
+
+          <!-- Período 2 -->
+          <div class="think-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="badge-emerald">1945 - 1964</span>
+                <span class="text-xs font-mono text-slate-500">A Batalha das Ideias</span>
+              </div>
+              <h3 class="text-lg font-serif font-bold text-white mb-2">A UDN, Eugênio Gudin & Roberto Campos</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                Com o fim da ditadura do Estado Novo getulista, intelectuais liberais fundam a UDN. Economistas como Eugênio Gudin e Roberto Campos alertaram pioneiramente para as ilusões do nacionalismo autárquico, prevendo que a emissão descontrolada de moeda geraria inflação crônica e desestabilização política.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800 text-xs text-emerald-300/90 font-mono">
+              Legado: Primeiro pensamento econômico ortodoxo articulado no debate público.
+            </div>
+          </div>
+
+          <!-- Período 3 -->
+          <div class="think-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="badge-gold">1964 - 1985</span>
+                <span class="text-xs font-mono text-slate-500">Exame Crítico Factual</span>
+              </div>
+              <h3 class="text-lg font-serif font-bold text-white mb-2">Regime Militar: Modernização Técnica e Limites</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                O PAEG (Bulhões e Campos) criou o Banco Central, SFH, FGTS e mercado de capitais. No entanto, a fase posterior adotou forte viés nacional-desenvolvimentista estatizante (mais de 200 empresas públicas criadas), endividamento externo e supressão de garantias civis. A direita democrática contemporânea rejeita o autoritarismo e reafirma que liberdade econômica é inseparável da democracia constitucional.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800 text-xs text-amber-300/90 font-mono">
+              Lição: Sem freios democráticos, o estatismo tecnocrático gera inflação e dívida.
+            </div>
+          </div>
+
+          <!-- Período 4 -->
+          <div class="think-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="badge-emerald">1988</span>
+                <span class="text-xs font-mono text-slate-500">Redemocratização</span>
+              </div>
+              <h3 class="text-lg font-serif font-bold text-white mb-2">A Constituição Cidadã & o Embate de 1988</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                A Carta de 1988 consagrou direitos fundamentais e o Estado Democrático de Direito. No plano econômico, o grupo constituinte liberal-conservador (o "Centrão" original) garantiu o Artigo 170 (livre iniciativa e propriedade privada), barrando propostas de estatização integral do sistema bancário e monopólios irrestritos.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800 text-xs text-emerald-300/90 font-mono">
+              Legado: Marco da democracia representativa com salvaguardas institucionais.
+            </div>
+          </div>
+
+          <!-- Período 5 -->
+          <div class="think-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="badge-gold">1994 - 2002</span>
+                <span class="text-xs font-mono text-slate-500">Estabilização & LRF</span>
+              </div>
+              <h3 class="text-lg font-serif font-bold text-white mb-2">Plano Real, Privatizações & Responsabilidade Fiscal</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                Economistas de formação liberal estruturam o Plano Real (1994), que extinguiu a hiperinflação de 2.000% ao ano. Seguiram-se as grandes privatizações da telefonia, siderurgia e ferrovias, e a promulgação da histórica <strong>Lei de Responsabilidade Fiscal (LC 101/2000)</strong>, blindando municípios e estados contra calotes.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800 text-xs text-amber-300/90 font-mono">
+              Legado: Restauração da moeda, crédito e expansão da infraestrutura com capital privado.
+            </div>
+          </div>
+
+          <!-- Período 6 -->
+          <div class="think-card p-6 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="badge-emerald">2014 - Presente</span>
+                <span class="text-xs font-mono text-slate-500">Nova Direita Cívica</span>
+              </div>
+              <h3 class="text-lg font-serif font-bold text-white mb-2">A Renovação da Sociedade Civil & Reformas</h3>
+              <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                Mobilização cívica contra a corrupção sistêmica e a irresponsabilidade fiscal dos anos 2014-2016. Conquistas legislativas históricas capitaneadas por novas lideranças: Reforma Trabalhista (2017), Reforma da Previdência (2019), Lei de Liberdade Econômica (2019), Marco do Saneamento (2020) e Autonomia do Banco Central (2021).
+              </p>
+            </div>
+            <div class="pt-3 border-t border-navy-800 text-xs text-emerald-300/90 font-mono">
+              Legado: Surgimento de think tanks, difusão popular e maturidade parlamentar.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 09 — ARGUMENTOS E CONTRA-ARGUMENTOS (BIBLIOTECA DE DEBATES)
+         ========================================================================== -->
+    <section id="debates" class="py-20 bg-navy-950 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="badge-gold mb-3">Dialética Racional & Elevação do Debate</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Biblioteca de Debates: Fatos vs. Narrativas
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            Aqui confrontamos com honestidade intelectual as críticas mais frequentes feitas às ideias de direita, apresentando o contexto histórico, a fundamentação analítica, evidências empíricas e limitações práticas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Coluna da Esquerda: Seletor de Tópicos -->
+          <div class="lg:col-span-4 space-y-2" id="debateSelector">
+            <!-- Renderizado dinamicamente por js/app.js -->
+          </div>
+
+          <!-- Coluna da Direita: Área de Exibição do Debate Selecionado -->
+          <div class="lg:col-span-8" id="debateDisplayArea">
+            <!-- Renderizado dinamicamente por js/app.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 10 — PAINEL DE DADOS E INDICADORES INTERATIVOS
+         ========================================================================== -->
+    <section id="indicadores" class="py-20 bg-navy-900 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="badge-emerald mb-3">Evidências Empíricas & Transparência</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Painel de Indicadores Oficiais
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            Séries históricas e métricas auditáveis compiladas do IBGE, Banco Central, IPEA, Fraser Institute, Heritage Foundation e Fórum Brasileiro de Segurança Pública.
+          </p>
+        </div>
+
+        <!-- Seletor de Indicadores em Grid de Botões -->
+        <div id="indicatorSelectorContainer" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
+          <!-- Renderizado dinamicamente por js/app.js -->
+        </div>
+
+        <!-- Dashboard Interativo: Gráfico e Metadados -->
+        <div class="think-card p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <!-- Gráfico Chart.js -->
+          <div class="lg:col-span-8">
+            <div class="h-80 w-full relative">
+              <canvas id="mainDashboardChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Metadados e Contextualização do Indicador -->
+          <div class="lg:col-span-4 bg-navy-950/80 p-6 rounded-lg border border-navy-700/80 space-y-4">
+            <div>
+              <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block mb-1">Indicador Ativo</span>
+              <h3 id="chartTitle" class="text-xl font-serif font-bold text-white">Índice de Liberdade Econômica</h3>
+            </div>
+
+            <div class="flex items-baseline gap-3">
+              <span id="chartValue" class="text-3xl font-display font-black text-amber-400">53.5 pts</span>
+              <span id="chartStatus" class="text-xs text-slate-400">Maioritariamente Não-Livre</span>
+            </div>
+
+            <div class="border-t border-navy-800 pt-3">
+              <span class="text-xs font-bold text-slate-300 block mb-1">Contexto & Análise:</span>
+              <p id="chartContext" class="text-xs text-slate-400 leading-relaxed">
+                Carregando análise contextualizada...
+              </p>
+            </div>
+
+            <div class="border-t border-navy-800 pt-3">
+              <span class="text-xs font-bold text-slate-300 block mb-1">Fonte & Metodologia:</span>
+              <p id="chartSource" class="text-[11px] text-amber-300/80 font-mono mb-1">Fraser / Heritage</p>
+              <p id="chartMethodology" class="text-[11px] text-slate-500">Mede Estado de Direito, Tamanho do Governo e Mercados.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 11 — PROPOSTAS PARA O FUTURO DO BRASIL (AGENDA 2026-2035)
+         ========================================================================== -->
+    <section id="propostas" class="py-20 bg-navy-950 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="badge-gold mb-3">Agenda Estratégica 2026-2035</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Propostas de Estado para o Futuro do Brasil
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            Uma plataforma propositiva estruturada por áreas temáticas, detalhando o problema diagnosticado, a solução concreta, o custo orçamentário estimado, benefícios, riscos mitigáveis e indicadores de sucesso.
+          </p>
+        </div>
+
+        <!-- Filtros de Categorias -->
+        <div id="proposalFilterBtns" class="flex flex-wrap items-center justify-center gap-2 mb-10">
+          <!-- Renderizado dinamicamente por js/app.js -->
+        </div>
+
+        <!-- Grid de Propostas -->
+        <div id="proposalsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Renderizado dinamicamente por js/app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 12 — PERGUNTAS FREQUENTES (FAQ)
+         ========================================================================== -->
+    <section id="faq" class="py-20 bg-navy-900 border-b border-navy-800">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="badge-emerald mb-3">Esclarecimento de Dúvidas</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Perguntas Frequentes
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-6">
+            Respostas límpidas, fundamentadas e acessíveis sobre os principais dilemas e indagações sobre o pensamento da direita brasileira.
+          </p>
+
+          <!-- Campo de Busca no FAQ -->
+          <div class="relative max-w-md mx-auto">
+            <input id="faqSearchInput" type="text" placeholder="Filtrar dúvidas (ex: Bolsa Família, impostos, meio ambiente)..." class="w-full px-4 py-3 pl-10 rounded-lg bg-navy-950 border border-navy-700 text-white placeholder-slate-500 text-sm focus:border-amber-400 focus:outline-none">
+            <svg class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </div>
+        </div>
+
+        <!-- Lista Dinâmica de FAQ -->
+        <div id="faqContainer" class="space-y-4">
+          <!-- Renderizado dinamicamente por js/app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO 13 — BIBLIOTECA DE FONTES & ACERVO DOCUMENTAL
+         ========================================================================== -->
+    <section id="biblioteca" class="py-20 bg-navy-950 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <span class="badge-gold mb-3">Rigor Factual & Acervo Verificável</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Biblioteca de Fontes e Referências
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-8">
+            Compilação transparente de legislações primárias, relatórios econômicos internacionais, tratados filosóficos e bancos de dados oficiais do Estado brasileiro.
+          </p>
+
+          <!-- Filtros de Tipo e Barra de Busca -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <div id="libraryFilterBtns" class="flex flex-wrap justify-center gap-2">
+              <!-- Renderizado dinamicamente por js/app.js -->
+            </div>
+            <div class="relative w-full sm:w-72">
+              <input id="librarySearchInput" type="text" placeholder="Buscar autor, título ou lei..." class="w-full px-3.5 py-2 pl-9 rounded bg-navy-900 border border-navy-700 text-white placeholder-slate-500 text-xs focus:border-amber-400 focus:outline-none">
+              <svg class="w-3.5 h-3.5 text-slate-500 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <div id="libraryContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Renderizado dinamicamente por js/app.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EQUIPE DO PROJETO & CORPO DE PESQUISADORES (INTEGRANTES DO GRUPO)
+         ========================================================================== -->
+    <section id="equipe" class="py-20 bg-navy-900 border-b border-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="badge-gold mb-3">Autoria & Desenvolvimento Discente</span>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+            Equipe de Pesquisa & Autoria do Projeto
+          </h2>
+          <p class="text-slate-300 text-base md:text-lg leading-relaxed">
+            Plataforma desenvolvida pelo corpo discente e comitê de pesquisa, organizada em frentes multidisciplinares de estratégia política, economia de mercado, direito constitucional, tecnologia e comunicação visual.
+          </p>
+        </div>
+
+        <!-- Grid de Integrantes do Grupo -->
+        <div id="teamContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <!-- Renderizado dinamicamente por js/app.js -->
+        </div>
+
+        <!-- Ficha Técnica e Organização das Frentes -->
+        <div class="mt-12 p-6 rounded-xl bg-navy-950 border border-navy-700/80 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+          <div class="p-4 rounded-lg bg-navy-900/60 border border-navy-800">
+            <span class="font-bold text-amber-400 block mb-2 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              Estratégia & Coordenação
+            </span>
+            <ul class="text-slate-300 space-y-1">
+              <li class="font-semibold text-white">Miguel Henrique</li>
+              <li>Allan Brito</li>
+              <li>Yago Luiz</li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-lg bg-navy-900/60 border border-navy-800">
+            <span class="font-bold text-emerald-400 block mb-2 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+              Economia & Indicadores
+            </span>
+            <ul class="text-slate-300 space-y-1">
+              <li>Pietro Duarte</li>
+              <li>Pedro Costa</li>
+              <li>Kaua Fonseca</li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-lg bg-navy-900/60 border border-navy-800">
+            <span class="font-bold text-blue-400 block mb-2 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+              História & Filosofia
+            </span>
+            <ul class="text-slate-300 space-y-1">
+              <li>Gabriel Pereira</li>
+              <li>Gabriel Antonio</li>
+              <li>Pedro Roque</li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-lg bg-navy-900/60 border border-navy-800">
+            <span class="font-bold text-amber-300 block mb-2 uppercase tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-amber-300"></span>
+              Tecnologia, Design & Conteúdo
+            </span>
+            <ul class="text-slate-300 space-y-1">
+              <li>Bernardo Henrique</li>
+              <li>Maria Leticia</li>
+              <li>Sara Fidelix</li>
+              <li>Eduardo Ribeiro</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER INSTITUCIONAL
+       ========================================================================== -->
+  <footer class="bg-navy-950 text-slate-400 border-t border-navy-800 pt-16 pb-12" role="contentinfo">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded bg-amber-500 flex items-center justify-center font-display font-black text-navy-950">
+              ODB
+            </div>
+            <span class="font-display font-bold text-white tracking-wider text-base">OPERAÇÃO DIREITA BRASIL</span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+            Plataforma digital independente de difusão de ideias, estudos estratégicos e defesa das instituições democráticas, da economia de mercado e da liberdade individual no Brasil.
+          </p>
+          <div class="text-xs text-slate-500">
+            © 2026 Operação Direita Brasil. Conteúdo sob licença Creative Commons com atribuição de fonte.
+          </div>
+          <div class="pt-2 text-xs text-amber-400/90 font-medium border-t border-navy-800">
+            <strong>Integrantes do Grupo:</strong> Miguel Henrique, Allan Brito, Yago Luiz, Pietro Duarte, Pedro Costa, Kaua Fonseca, Gabriel Pereira, Gabriel Antonio, Pedro Roque, Bernardo Henrique, Maria Leticia, Sara Fidelix e Eduardo Ribeiro.
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-serif font-bold text-white text-sm uppercase tracking-wider mb-3">Navegação Rápida</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#o-que-e" class="hover:text-amber-400 transition-colors">Conceito & 4 Escolas</a></li>
+            <li><a href="#pilares" class="hover:text-amber-400 transition-colors">Os 8 Pilares Fundamentais</a></li>
+            <li><a href="#economia" class="hover:text-amber-400 transition-colors">Economia & Marco Legal</a></li>
+            <li><a href="#seguranca" class="hover:text-amber-400 transition-colors">Segurança Pública & Justiça</a></li>
+            <li><a href="#historia" class="hover:text-amber-400 transition-colors">História Política Brasileira</a></li>
+            <li><a href="#debates" class="hover:text-amber-400 transition-colors">Biblioteca de Debates</a></li>
+            <li><a href="#indicadores" class="hover:text-amber-400 transition-colors">Painel de Indicadores</a></li>
+            <li><a href="#propostas" class="hover:text-amber-400 transition-colors">Agenda 2026-2035</a></li>
+            <li><a href="#equipe" class="hover:text-amber-400 transition-colors text-amber-300 font-bold">Integrantes do Grupo</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serif font-bold text-white text-sm uppercase tracking-wider mb-3">Compromisso Editorial</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#faq" class="hover:text-amber-400 transition-colors">Perguntas Frequentes</a></li>
+            <li><a href="#biblioteca" class="hover:text-amber-400 transition-colors">Acervo de Fontes Primárias</a></li>
+            <li class="pt-2 text-[11px] text-slate-500">
+              Rigor metodológico baseado em dados oficiais (IBGE, BCB, IPEA, Fraser, Heritage).
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-navy-800/80 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div>
+          Desenvolvido com excelência técnica, acessibilidade WCAG e desempenho de alta performance.
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#hero" class="text-slate-400 hover:text-amber-300 transition-colors flex items-center gap-1">
+            Voltar ao topo
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL GLOBAL PARA LEITURA IMERSIVA E APROFUNDAMENTO
+       ========================================================================== -->
+  <div id="globalModal" class="hidden fixed inset-0 z-50 overflow-y-auto modal-backdrop flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="relative bg-navy-900 border border-amber-500/30 rounded-xl max-w-3xl w-full p-6 md:p-8 shadow-2xl max-h-[90vh] overflow-y-auto">
+      
+      <!-- Botão Fechar Modal -->
+      <button id="closeModalBtn" type="button" class="absolute top-5 right-5 text-slate-400 hover:text-white p-1 rounded-lg bg-navy-800 hover:bg-navy-700 transition-colors" aria-label="Fechar Janela">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <!-- Conteúdo Injetado Dinamicamente -->
+      <div id="modalDynamicContent"></div>
+
+    </div>
+  </div>
+
+  <!-- Scripts da Aplicação -->
+  <script src="js/data.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

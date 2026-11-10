@@ -1,0 +1,301 @@
+/* ==========================================================================
+   OPERAÇÃO DIREITA BRASIL — IDENTIDADE VISUAL INSTITUCIONAL & DESIGN SYSTEM
+   Padrão: Think Tanks Internacionais (Hoover, AEI, Fraser, CATO)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Cores Primárias */
+  --color-navy-darkest: #070D19;
+  --color-navy-dark: #0B132B;
+  --color-navy-surface: #131E3A;
+  --color-navy-border: #1E2D54;
+  --color-navy-light: #2A3B66;
+
+  /* Cores de Destaque */
+  --color-gold-light: #F6D365;
+  --color-gold: #D4AF37;
+  --color-gold-dark: #AA820A;
+  --color-emerald: #10B981;
+  --color-emerald-dark: #047857;
+
+  /* Neutros */
+  --color-slate-900: #0F172A;
+  --color-slate-800: #1E293B;
+  --color-slate-700: #334155;
+  --color-slate-400: #94A3B8;
+  --color-slate-300: #CBD5E1;
+  --color-slate-100: #F1F5F9;
+  --color-slate-50: #F8FAFC;
+  --color-white: #FFFFFF;
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --shadow-subtle: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
+  --shadow-elevated: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+  --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.25);
+}
+
+/* Modo Alto Contraste para Acessibilidade WCAG */
+body.high-contrast {
+  --color-navy-darkest: #000000;
+  --color-navy-dark: #000000;
+  --color-navy-surface: #0a0a0a;
+  --color-navy-border: #444444;
+  --color-slate-400: #ffffff;
+  --color-slate-300: #ffffff;
+  --color-gold: #ffd700;
+}
+
+/* Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: var(--color-slate-100);
+  background-color: var(--color-navy-darkest);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy-darkest);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-dark);
+}
+
+/* Glassmorphism & Header */
+.glass-nav {
+  background: rgba(11, 19, 43, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+/* Gradientes e Texturas */
+.hero-gradient {
+  background: radial-gradient(circle at 50% 20%, rgba(20, 32, 65, 0.85) 0%, rgba(7, 13, 25, 0.98) 85%);
+}
+
+.hero-mesh {
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(16, 185, 129, 0.08) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(30, 58, 138, 0.2) 0px, transparent 60%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF6D3 0%, #D4AF37 50%, #AA820A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emerald-gradient-text {
+  background: linear-gradient(135deg, #A7F3D0 0%, #10B981 50%, #047857 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Efeito de Cartão Institucional */
+.think-card {
+  background: var(--color-navy-surface);
+  border: 1px solid var(--color-navy-border);
+  border-radius: 12px;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.think-card:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elevated), 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.think-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.think-card:hover::before {
+  opacity: 1;
+}
+
+/* Botões Institucionais */
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+  color: #070D19;
+  font-weight: 700;
+  padding: 0.85rem 1.85rem;
+  border-radius: 6px;
+  border: 1px solid #F6D365;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #F6D365 0%, #D4AF37 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--color-gold-light);
+  font-weight: 600;
+  padding: 0.85rem 1.85rem;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-outline-gold:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+/* Badge Padrão */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: var(--color-gold-light);
+}
+
+.badge-emerald {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #6EE7B7;
+}
+
+/* Linha do Tempo Estilizada */
+.timeline-stem {
+  position: relative;
+}
+.timeline-stem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 24px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(212, 175, 55, 0.8) 0%, rgba(30, 45, 84, 0.2) 100%);
+}
+
+@media (min-width: 768px) {
+  .timeline-stem::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  background-color: rgba(7, 13, 25, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+/* Accordion de FAQ */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary .faq-icon {
+  transform: rotate(180deg);
+}
+
+/* Acessibilidade - Focus Ring Visível */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .think-card {
+    border: 1px solid #ccc !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
